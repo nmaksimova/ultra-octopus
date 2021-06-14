@@ -1,0 +1,140 @@
+stackbitVersion: ~0.3.0
+ssgName: hugo
+publishDir: public
+dataDir: data
+pagesDir: content
+assets:
+  referenceType: static
+  staticDir: static
+  uploadDir: assets
+  publicPath: /
+cmsName: git
+models:
+  about:
+    type: page
+    label: About
+    folder: about
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: object
+        name: math
+        label: Math
+        fields:
+          - type: boolean
+            name: enable
+            label: Enable
+  documentation:
+    type: page
+    label: Documentation
+    folder: categories/documentation
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+  post:
+    type: page
+    label: Post
+    folder: posts
+    match: '**/*'
+    fields:
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: datetime
+        name: lastmod
+        label: Lastmod
+      - type: string
+        name: description
+        label: Description
+      - type: list
+        name: resources
+        label: Resources
+        items:
+          type: object
+          fields:
+            - type: string
+              name: name
+              label: Name
+            - type: image
+              name: src
+              label: Src
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: list
+        name: categories
+        label: Categories
+        items:
+          type: string
+      - type: string
+        name: upd
+        label: Upd
+      - type: object
+        name: page
+        label: Page
+        fields:
+          - type: string
+            name: theme
+            label: Theme
+      - type: object
+        name: toc
+        label: Toc
+        fields:
+          - type: boolean
+            name: auto
+            label: Auto
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: object
+        name: math
+        label: Math
+        fields:
+          - type: boolean
+            name: enable
+            label: Enable
+  upagge_en:
+    type: data
+    label: Upagge En
+    file: authors/upagge.en.json
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: nickname
+        label: Nickname
+      - type: string
+        name: about
+        label: About
+      - type: image
+        name: avatar
+        label: Avatar
+      - type: string
+        name: link
+        label: Link
+      - type: string
+        name: email
+        label: Email
+      - type: string
+        name: ps
+        label: Ps
